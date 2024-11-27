@@ -16,30 +16,18 @@
 
 package br.edu.up.rgm32662921.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-import android.content.ClipData
-import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
 
-@Database(entities = [ClipData.Item::class], version = 1, exportSchema = false)
-abstract class InventoryDatabase : RoomDatabase() {
-
-    abstract fun itemDao(): ItemDao
-
-    companion object {
-        @Volatile
-        private var Instance: InventoryDatabase? = null
-
-        fun getDatabase(context: Context): InventoryDatabase {
-            // if the Instance is not null, return it, otherwise create a new database instance.
-            return Instance ?: synchronized(this) {
-                Room.databaseBuilder(context, InventoryDatabase::class.java, "item_database")
-                    .build()
-                    .also { Instance = it }
-            }
-        }
-    }
-
-}
+/**
+ * Entity data class represents a single row in the database.
+ */
+@Entity(tableName = "items")
+data class Item(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val name: String,
+    val price: Double,
+    val quantity: Int
+)
