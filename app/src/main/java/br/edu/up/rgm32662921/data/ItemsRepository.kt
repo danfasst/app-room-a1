@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.rgm32662921.data
+package br.edu.up.rgm32662921.data
 
 import br.edu.up.rgm32662921.data.Item
 import kotlinx.coroutines.flow.Flow

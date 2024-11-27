@@ -18,7 +18,7 @@ package br.edu.up.rgm32662921.ui.item
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.rgm32662921.data.ItemsRepository
+import br.edu.up.rgm32662921.data.ItemsRepository
 
 /**
  * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
