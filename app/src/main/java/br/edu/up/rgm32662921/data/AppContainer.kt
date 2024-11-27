@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.rgm32662921.data
+package br.edu.up.rgm32662921.data
 
 import android.content.Context
+import com.example.rgm32662921.data.ItemsRepository
+import com.example.rgm32662921.data.OfflineItemsRepository
 
 /**
  * App container for Dependency injection.
@@ -33,6 +35,6 @@ class AppDataContainer(private val context: Context) : AppContainer {
      * Implementation for [ItemsRepository]
      */
     override val itemsRepository: ItemsRepository by lazy {
-        OfflineItemsRepository()
+        OfflineItemsRepository(InventoryDatabase.getDatabase(context).itemDao())
     }
 }
