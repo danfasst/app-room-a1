@@ -14,15 +14,32 @@
  * limitations under the License.
  */
 
-package com.example.rgm32662921.data
+package br.edu.up.rgm32662921.data
 
 
-/**
- * Entity data class represents a single row in the database.
- */
-class Item(
-    val id: Int = 0,
-    val name: String,
-    val price: Double,
-    val quantity: Int
-)
+import android.content.ClipData
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+
+@Database(entities = [ClipData.Item::class], version = 1, exportSchema = false)
+abstract class InventoryDatabase : RoomDatabase() {
+
+    abstract fun itemDao(): ItemDao
+
+    companion object {
+        @Volatile
+        private var Instance: InventoryDatabase? = null
+
+        fun getDatabase(context: Context): InventoryDatabase {
+            // if the Instance is not null, return it, otherwise create a new database instance.
+            return Instance ?: synchronized(this) {
+                Room.databaseBuilder(context, InventoryDatabase::class.java, "item_database")
+                    .build()
+                    .also { Instance = it }
+            }
+        }
+    }
+
+}
