@@ -49,7 +49,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.edu.up.rgm32662921.InventoryTopAppBar
 import br.edu.up.rgm32662921.R
-import com.example.rgm32662921.data.Item
+import br.edu.up.rgm32662921.data.Item
 import br.edu.up.rgm32662921.ui.item.formatedPrice
 import br.edu.up.rgm32662921.ui.navigation.NavigationDestination
 import br.edu.up.rgm32662921.ui.theme.InventoryTheme
