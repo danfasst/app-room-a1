@@ -18,7 +18,6 @@ package br.edu.up.rgm32662921.data
 
 import android.content.Context
 import com.example.rgm32662921.data.ItemsRepository
-import com.example.rgm32662921.data.OfflineItemsRepository
 
 /**
  * App container for Dependency injection.
