@@ -17,8 +17,8 @@
 package br.edu.up.rgm32662921
 
 import android.app.Application
-import com.example.rgm32662921.data.AppContainer
-import com.example.rgm32662921.data.AppDataContainer
+import br.edu.up.rgm32662921.data.AppContainer
+import br.edu.up.rgm32662921.data.AppDataContainer
 
 class InventoryApplication : Application() {
 
